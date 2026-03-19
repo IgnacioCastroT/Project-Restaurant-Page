@@ -1,15 +1,12 @@
 import pikachuImg from "./assets/burger-pikachu.png";
-
+import { loadMenu } from "./menu.js";
 
 export function loadHome() {
     const content = document.querySelector("#content");
 
-    // limpiar contenido (por si lo vuelves a cargar después)
+
     content.innerHTML = "";
 
-    // ====================
-    // SECCIÓN PRINCIPAL
-    // ====================
     const principal = document.createElement("div");
     principal.classList.add("principal");
 
@@ -30,10 +27,19 @@ export function loadHome() {
     const btn1 = document.createElement("button");
     btn1.classList.add("btn-order");
     btn1.textContent = "¡Haz tu pedido ya!";
+    btn1.addEventListener("click", () => {
+        alert("Navega al Menú para atrapar tu sabor favorito.");
+        content.innerHTML = "";
+        loadMenu();
+    });
 
     const btn2 = document.createElement("button");
     btn2.classList.add("btn-secondary");
     btn2.textContent = "Ver Menú";
+    btn2.addEventListener("click", () => {
+        content.innerHTML = "";
+        loadMenu();
+    });
 
     btnContainer.appendChild(btn1);
     btnContainer.appendChild(btn2);
@@ -87,9 +93,26 @@ export function loadHome() {
     horario.appendChild(ul);
 
     // ====================
+    // FRASE CÉLEBRE
+    // ====================
+    const quote = document.createElement("div");
+    quote.classList.add("home-quote");
+
+    const quoteText = document.createElement("p");
+    quoteText.innerHTML = `"No se trata solo de atrapar Pokémon...<br>se trata de <span class="text-red">saborearlos</span>."`;
+
+    const quoteAuthor = document.createElement("span");
+    quoteAuthor.classList.add("home-quote-author");
+    quoteAuthor.textContent = "— Profesor Oak, después de visitar PokéBurger";
+
+    quote.appendChild(quoteText);
+    quote.appendChild(quoteAuthor);
+
+    // ====================
     // AGREGAR TODO AL CONTENT
     // ====================
     content.appendChild(principal);
+    content.appendChild(quote);
     content.appendChild(horario);
 }
 
