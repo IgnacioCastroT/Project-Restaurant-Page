@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #f8f5f5;
+    padding: 1rem 5%;
+    font-family: "Fjalla One";
+}
+
+.header {
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    padding: 0.5rem 0;
+}
+
+.nav-left {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    background-image: url("assets/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 3vw, 3rem);
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    padding-top: 40px;
+}
+
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    padding: 4rem 8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-pikachu {
+    width: 100%;
+    max-width: 700px;
+    border-radius: 30px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.container-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+    flex: 1;
+    min-width: 300px;
+}
+
+.h2-description {
+    font-size: clamp(2.5rem, 5vw, 7rem);
+    font-weight: bold;
+    line-height: 1.1;
+}
+
+.h3-description {
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: rgb(94, 94, 92);
+    line-height: 1.6;
+    font-family: "Roboto";
+    font-weight: 400;
+}
+
+.text-red {
+    color: red;
+}
+
+.horario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    list-style: none;
+}
+
+.horario-atencion {
+    color: red;
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+}
+
+.dias {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: gray;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    font-family: "Roboto";
+}
+
+.btn-order {
+    background-color: #ee1515;
+    color: white;
+    border: 3px solid #222;
+    border-radius: 50px;
+    padding: clamp(0.6rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-family: "Fjalla One", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 4px 5px 0px #222;
+}
+
+.btn-order:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 7px 0px #222;
+}
+
+.btn-order:active {
+    transform: translate(2px, 3px);
+    box-shadow: 2px 2px 0px #222;
+}
+
+/* boton secundario estilo outlined */
+.btn-secondary {
+    background-color: #fccf00;
+    color: #222;
+    border: 3px solid #222;
+    border-radius: 50px;
+    padding: clamp(0.6rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-family: "Fjalla One", sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 4px 5px 0px #222;
+}
+
+.btn-secondary:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 7px 0px #222;
+    background-color: #e5bc00;
+}
+
+.btn-secondary:active {
+    transform: translate(2px, 3px);
+    box-shadow: 2px 2px 0px #222;
+}
+
+.btn {
+    background-color: transparent;
+    border: none;
+    font-family: "Fjalla One", sans-serif;
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: #444;
+    padding: 0.5rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.btn:hover {
+    color: #ee1515;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: #fccf00;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.btn:hover::after {
+    width: 100%;
+}
+
+.container-left-btn {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* ── MEDIA QUERY ── */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .nav-right {
+        gap: 1rem;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .principal {
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .container-left {
+        order: 1;
+        /* texto primero */
+        align-items: center;
+        /* centering items in flex column */
+    }
+
+    .container-left-btn {
+        justify-content: center;
+    }
+
+    .img-pikachu {
+        order: 2;
+        /* imagen después */
+        max-width: 100%;
+    }
+
+    .h2-description {
+        font-size: clamp(2.5rem, 8vw, 4rem);
+    }
+}
